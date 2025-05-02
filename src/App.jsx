@@ -6,6 +6,7 @@ import LoginPage from './Pages/LoginPage'
 import SignUpPage from './Pages/SignUpPage'
 import NotFoundPage from './Pages/NotFoundPage'
 import AboutPage from './Pages/AboutPage'
+import ContactPage from './Pages/ContactPage'
 const App = () => {
   return (
     <BrowserRouter>
@@ -14,8 +15,9 @@ const App = () => {
         <Route path="/cart" element={<CartPage/>} />
         <Route path = '/login' element={<LoginPage/>} />
         <Route path = '/signup' element={<SignUpPage/>} />
-        <Route path="*" element={<NotFoundPage/>} />
         <Route path="/about" element={<AboutPage/>} />
+        <Route path="/contact" element={<ContactPage/>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </BrowserRouter>
   )
