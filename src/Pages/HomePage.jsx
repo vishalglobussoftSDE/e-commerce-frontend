@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="mx-8 px-8">
         <Sidebar />
       </div>
       <Footer />
