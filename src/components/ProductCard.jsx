@@ -18,7 +18,7 @@ export const Product = () => {
             <img className='w-[20px] h-[20px]' src="/Vector.png" alt="" />
             <img className='w-[20px] h-[20px]' src="/Vector.png" alt="" />
             </div>
-          <p className='color'>---(35)</p>
+          <p className='color'>(35)</p>
         </div>
       </div>
     </div>
