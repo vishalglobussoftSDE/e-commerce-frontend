@@ -4,6 +4,7 @@ import HomePage from './Pages/HomePage'
 import CartPage from './Pages/CartPage'
 import LoginPage from './Pages/LoginPage'
 import SignUpPage from './Pages/SignUpPage'
+import NotFoundPage from './Pages/NotFoundPage'
 const App = () => {
   return (
     <BrowserRouter>
@@ -13,7 +14,7 @@ const App = () => {
         <Route path = '/about' element={<div>About Us</div>} />
         <Route path = '/login' element={<LoginPage/>} />
         <Route path = '/signup' element={<SignUpPage/>} />
-        <Route path="*" element={<div>404 Not Found</div>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </BrowserRouter>
   )

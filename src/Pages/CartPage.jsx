@@ -30,7 +30,7 @@ const CartPage = () => {
 
   return (
     <div className="p-8">
-      <div className="text-sm text-gray-500 mb-4">Home / Cart</div>
+      <div className="text-sm text-gray-500 mb-4">Home / <span className='text=-black'>Cart</span> </div>
 
       <div className="grid grid-cols-4 gap-6 text-sm text-gray-700 uppercase font-semibold mb-2 px-1">
         <div>Product</div>
