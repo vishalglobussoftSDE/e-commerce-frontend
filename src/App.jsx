@@ -8,6 +8,7 @@ import NotFoundPage from './Pages/NotFoundPage'
 import AboutPage from './Pages/AboutPage'
 import AccountPage from './Pages/AccountPage'
 
+import ContactPage from './Pages/ContactPage'
 const App = () => {
   return (
     <BrowserRouter>
@@ -16,9 +17,10 @@ const App = () => {
         <Route path="/cart" element={<CartPage/>} />
         <Route path = '/login' element={<LoginPage/>} />
         <Route path = '/signup' element={<SignUpPage/>} />
-        <Route path="*" element={<NotFoundPage/>} />
         <Route path="/about" element={<AboutPage/>} />
         <Route path="/account" element={<AccountPage/>} />
+        <Route path="/contact" element={<ContactPage/>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </BrowserRouter>
   )
