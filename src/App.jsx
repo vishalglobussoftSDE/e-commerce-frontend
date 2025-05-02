@@ -1,11 +1,12 @@
 import React from 'react'
 import  { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
+import HomePage from './Pages/HomePage'
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Sidebar/>} />
+        <Route path="/" element={<HomePage/>} />
       </Routes>
     </BrowserRouter>
   )
