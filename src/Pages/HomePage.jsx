@@ -5,11 +5,16 @@ import Header from "../components/Header";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
+      {/* Header stays at top */}
       <Header />
-      <div className="mx-8 px-8">
+
+      {/* Main content grows to fill space */}
+      <main className="flex-grow mx-8 px-8">
         <Sidebar />
-      </div>
+      </main>
+
+      {/* Footer sticks to bottom */}
       <Footer />
     </div>
   );
