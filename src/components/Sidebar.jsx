@@ -4,7 +4,7 @@ import dropdown from '../assets/DropDown.png';
 
 const Sidebar = () => {
   return (
-    <div className="w-56 p-4 bg-white shadow-md">
+    <div className="w-56 px-8 bg-white py-12 border-r border-gray-200">
       <div className="flex flex-col gap-4">
         <div className="flex justify-between items-center">
           <Link to="/womens-fashion" className="hover:underline">Women's Fashion</Link>
