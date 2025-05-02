@@ -1,5 +1,8 @@
 import React from 'react';
 import { CiSearch } from "react-icons/ci";
+import { CiHeart } from "react-icons/ci";
+import { BsCart3 } from "react-icons/bs";
+import { LuUser } from "react-icons/lu";
 
 const Header = () => {
 
@@ -25,10 +28,17 @@ const Header = () => {
                         <a href='#'><li className='inline-block mx-6'>Sign Up</li></a>
                     </ul>
                 </div>
-                <div className='bg-gray-100 flex items-center h-[38px] p-[4px]'>
-                    <input type='text' placeholder='What are you looking for?' className='text-[12px] px-[20px] h-[18px]'></input>
-                    <a className='w-[16px] h-[16px] m-[4px] cursor-pointer'><CiSearch/></a>
-                </div> 
+                <div className='flex'>
+                    <div className='bg-gray-100 flex items-center h-[38px] p-[4px]'>
+                        <input type='text' placeholder='What are you looking for?' className='text-[12px] px-[20px] h-[18px]'></input>
+                        <a className='w-[16px] h-[16px] m-[4px] cursor-pointer text-xl'><CiSearch/></a>
+                    </div>
+                    <div className='flex items-center h-[38px] p-[4px]'>
+                        <a className='w-[16px] h-[16px] mx-[10px] cursor-pointer text-xl font-extrabold' href='#'><CiHeart/></a>
+                        <a className='w-[16px] h-[16px] mx-[10px] cursor-pointer text-xl font-extrabold' href='#'><BsCart3/></a>
+                        <a className='w-[16px] h-[16px] mx-[10px] cursor-pointer text-xl font-extrabold' href='#'><LuUser/></a>
+                    </div>
+                </div>
             </div>            
         </div>
     </div>
