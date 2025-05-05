@@ -8,16 +8,16 @@ const DisplayCardSection = ({ product, quantity, onIncrease, onDecrease }) => {
 
   return (
     <div className="grid grid-cols-4 gap-6 items-center border border-gray-300 rounded-md p-4 mb-4 shadow-sm">
-      {/* Product */}
+
       <div className="flex items-center gap-4">
         <img src={image} alt={name} className="w-14 h-14 object-cover" />
         <span className="text-sm">{name}</span>
       </div>
 
-      {/* Price */}
+
       <div className="text-sm">${price}</div>
 
-      {/* Quantity */}
+
       <div>
         <div className="border rounded px-2 py-1 flex items-center justify-between w-[70px]">
           <span className="text-sm font-medium">{quantity.toString().padStart(2, '0')}</span>
@@ -32,7 +32,7 @@ const DisplayCardSection = ({ product, quantity, onIncrease, onDecrease }) => {
         </div>
       </div>
 
-      {/* Subtotal */}
+
       <div className="text-sm">${subtotal}</div>
     </div>
   );
