@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import OurProduct from "../components/HomePageComponents/OurProduct";
+import NewArrivals from "../components/HomePageComponents/NewArrivals";
 
 const HomePage = () => {
   return (
@@ -11,7 +12,7 @@ const HomePage = () => {
       <main className="flex-grow mx-8 px-8">
         <Sidebar />
       </main>
-      <OurProduct/>
+      <NewArrivals/>
       <Footer />
     </div>
   );
