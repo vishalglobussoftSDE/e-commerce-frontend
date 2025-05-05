@@ -6,6 +6,7 @@ import LoginPage from './Pages/LoginPage'
 import SignUpPage from './Pages/SignUpPage'
 import NotFoundPage from './Pages/NotFoundPage'
 import AboutPage from './Pages/AboutPage'
+import CheckOut from './Pages/CheckOut'
 const App = () => {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ const App = () => {
         <Route path = '/signup' element={<SignUpPage/>} />
         <Route path="*" element={<NotFoundPage/>} />
         <Route path="/about" element={<AboutPage/>} />
+        <Route path='/check/list/app/check1' element={<CheckOut/>} />
       </Routes>
     </BrowserRouter>
   )
