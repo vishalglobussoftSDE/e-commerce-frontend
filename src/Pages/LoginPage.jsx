@@ -2,7 +2,6 @@ import React from "react";
 import Header from "../components/Header";
 import signupImg from "../assets/logSign-Img/log-sign.png";
 import { Link } from "react-router-dom";
-import googleIcon from "../assets/logSign-Img/googleIcon.png";
 import Footer from "../components/Footer.jsx";
 
 const LoginPage = () => {
