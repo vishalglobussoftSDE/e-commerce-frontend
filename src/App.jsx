@@ -9,6 +9,7 @@ import AboutPage from './Pages/AboutPage'
 import AccountPage from './Pages/AccountPage'
 import ContactPage from './Pages/ContactPage'
 import CheckOut from './Pages/CheckOut'
+
 const App = () => {
   return (
     <BrowserRouter>

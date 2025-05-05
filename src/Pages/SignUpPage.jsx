@@ -1,11 +1,55 @@
-import React from "react";
 import Header from "../components/Header";
 import signupImg from "../assets/logSign-Img/log-sign.png";
 import { Link } from "react-router-dom";
 import googleIcon from "../assets/logSign-Img/googleIcon.png";
 import Footer from "../components/Footer.jsx";
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const navigate = useNavigate()
+
+  const handleInput = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Submitting user:", user);
+  
+    try {
+      const response = await axios.post("http://localhost:3000/api/v1/user/signup", user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  
+      console.log("Signup successful:", response.data);
+
+      navigate("/")
+      // You can redirect or save token here
+    } catch (error) {
+      if (error.response) {
+        console.error("Signup failed:", error.response.data);
+      } else {
+        console.error("Network or server error:", error.message);
+      }
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -14,24 +58,30 @@ const SignUpPage = () => {
         <div className="flex flex-col mr-60 gap-6">
           <h1 className="text-4xl">Create an account</h1>
           <p className="text-xl">Enter your details below</p>
-          <form className="flex flex-col gap-5.5">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5.5">
             <input
               className="w-full border-b border-gray-200  py-2 focus:outline-none focus:border-gray-400"
               type="text"
               name="name"
               placeholder="Name"
+              value={user.name}
+              onChange={handleInput}
             />
             <input
               className="w-full border-b border-gray-200  py-2 focus:outline-none focus:border-gray-400"
               type="text"
               name="email"
               placeholder="Enter your email"
+              value={user.email}
+              onChange={handleInput}
             />
             <input
               className="w-full border-b border-gray-200  py-2 focus:outline-none focus:border-gray-400"
               type="text"
               name="password"
               placeholder="Password"
+              value={user.password}
+              onChange={handleInput}
             />
             <div>
               <button className="w-full bg-[#DB4444] text-xl text-white py-2.5 px-4 rounded-md hover:bg-[#c33c3c] transition-colors duration-200">
