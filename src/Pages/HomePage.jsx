@@ -12,6 +12,7 @@ const HomePage = () => {
       <main className="flex-grow mx-8 px-8">
         <Sidebar />
       </main>
+      <OurProduct/>
       <NewArrivals/>
       <Footer />
     </div>
