@@ -27,6 +27,7 @@ const HomePage = () => {
       
       <div className="mx-14">
         <OurProduct />
+        <hr className="mt-6 border-gray-300" />
         <NewArrivals />
 
         <div className="flex justify-center gap-20 mb-34">
