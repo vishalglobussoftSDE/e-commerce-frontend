@@ -24,7 +24,7 @@ const HomePage = () => {
           </div>
         </div>
       </main>
-      <OurProduct />
+      
       <div className="mx-14">
         <OurProduct />
         <NewArrivals />
