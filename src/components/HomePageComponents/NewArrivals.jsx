@@ -6,7 +6,7 @@ import newArrivalImg4 from "../../assets/newArrival-img/new arrival img4.png";
 
 const NewArrivals = () => {
   return (
-    <div className="px-4">
+    <div>
       {/* Heading */}
       <div className="flex items-center gap-4 my-12">
         <div className="h-10 w-5 bg-[#DB4444] rounded-sm"></div>
