@@ -15,10 +15,12 @@ import servicesPng6 from "../assets/about-img/about-png6.png";
 import servicesPng7 from "../assets/about-img/about-png7.png";
 import Footer from "../components/Footer.jsx";
 import { Link } from "react-router-dom";
+import Header from "../components/Header.jsx"
 
 const AboutPage = () => {
   return (
     <div>
+      <Header/>
       <div className="m-8 p-8">
         <p>
           <Link to="/">Home  </Link>/

@@ -2,18 +2,21 @@
 
 @import "tailwindcss";
 
-@utility container{
-  margin:auto
+@utility container {
+  margin: auto
 }
 
 :root {
   --font-base: "Poppins", sans-serif;
 }
 
-body{
+body {
   font-family: var(--font-base);
+  overflow-y: scroll;
+
+
 }
 
-input:focus{
+input:focus {
   outline: none;
 }

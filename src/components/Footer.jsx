@@ -31,7 +31,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Support Section */}
+
                 <div className='flex flex-col gap-2 max-w-[250px]'>
                     <h5 className='text-lg font-semibold'>Support</h5>
                     <p>111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh.</p>
@@ -39,7 +39,7 @@ const Footer = () => {
                     <p>+88015-88888-9999</p>
                 </div>
 
-                {/* Account Section */}
+               
                 <div className='flex flex-col gap-2 max-w-[250px]'>
                     <h5 className='text-lg font-semibold'>Account</h5>
                     <p>My Account</p>
@@ -49,7 +49,7 @@ const Footer = () => {
                     <p>Shop</p>
                 </div>
 
-                {/* Quick Links Section */}
+               
                 <div className='flex flex-col gap-2 max-w-[250px]'>
                     <h5 className='text-lg font-semibold'>Quick Link</h5>
                     <p>Privacy Policy</p>
@@ -58,7 +58,7 @@ const Footer = () => {
                     <p>Contact</p>
                 </div>
 
-                {/* Download App Section */}
+             
                 <div className='flex flex-col gap-4 max-w-[250px]'>
                     <h5 className='text-lg font-semibold'>Download App</h5>
                     <p className='text-[#B3B3B3] font-medium text-[12px] leading-[18px]'>
