@@ -3,7 +3,6 @@ import product from '../assets/MonitorCartSmall.png';
 import payCards from '../assets/payCards.png';
 import '../App.css';
 import PathLocation from '../components/PathLocation';
-import Header from '../components/Header';
 
 const CheckOut = () => {
     
