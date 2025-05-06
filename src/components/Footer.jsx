@@ -82,7 +82,7 @@ const Footer = () => {
             </div>
             <div className="copyrightSection border-t border-gray-700 mt-8">
     <p className='text-center text-[14px] leading-[20px] font-medium text-gray-400 py-4'>
-        &copy; 2023 Exclusive. All rights reserved.
+        &copy; 2025 Exclusive. All rights reserved.
     </p>
 </div>
 

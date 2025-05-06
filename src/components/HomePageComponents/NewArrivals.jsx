@@ -3,16 +3,16 @@ import newArrivalImg1 from "../../assets/newArrival-img/new arrival img1.png";
 import newArrivalImg2 from "../../assets/newArrival-img/new arrival img2.png";
 import newArrivalImg3 from "../../assets/newArrival-img/new arrival img3.png";
 import newArrivalImg4 from "../../assets/newArrival-img/new arrival img4.png";
+import ProductSectionLayout from "../ProductSectionLayout";
 
 const NewArrivals = () => {
   return (
     <div>
-      {/* Heading */}
-      <div className="flex items-center gap-4 my-12">
-        <div className="h-10 w-5 bg-[#DB4444] rounded-sm"></div>
-        <p className="text-[#DB4444] text-xl">Featured</p>
-      </div>
-      <h2 className="text-4xl font-semibold mb-14">New Arrival</h2>
+      
+      <ProductSectionLayout
+          title="New Arrival"
+          subtitle="Featured"
+        />
 
       {/* Grid layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:h-[600px] mb-40">

@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="w-[270px]">
-      <div className="w-[270px] relative h-[250px] flex justify-center items-center bg-[#F5F5F5] rounded-md">
+      <div className="w-[270px] relative h-[350px] flex flex-col justify-center items-center bg-[#F5F5F5] rounded-md">
         <div
           className="absolute top-5 right-3 cursor-pointer"
           onClick={() => setLiked(!liked)}
@@ -30,6 +30,7 @@ const ProductCard = ({ product }) => {
           src={imageUrl}
           alt={product.name}
         />
+        <button className="w-full absolute bottom-0 bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900">Add to Cart</button>
       </div>
       <div>
         <p className="text-xl py-4 font-semibold">{product.name}</p>
