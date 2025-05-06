@@ -10,6 +10,7 @@ import AccountPage from './Pages/AccountPage'
 import ContactPage from './Pages/ContactPage'
 import CheckOut from './Pages/CheckOut'
 import Today from './components/Today'
+import OrderPlaced from './Pages/OrderPlacedPage'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="*" element={<NotFoundPage/>} />
         <Route path='/checkOut' element={<CheckOut/>} />
         <Route path='today' element={ <Today/>} />
+        <Route path='placed' element={ <OrderPlaced/>} />
       </Routes>
     </BrowserRouter>
   )

@@ -7,6 +7,19 @@ import { useState } from "react";
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = useState(false);
 
+  const addtoCart = () => {
+    console.log("Product added to cart:", {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: imageUrl,
+      stock: product.stock
+    });
+  
+    
+  };
+  
+
   const imageUrl =
     product.images && product.images.length > 0
       ? `http://localhost:3000${product.images[0]}`
@@ -30,7 +43,9 @@ const ProductCard = ({ product }) => {
           src={imageUrl}
           alt={product.name}
         />
-        <button className="w-full absolute bottom-0 bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900">Add to Cart</button>
+        <button
+          onClick={addtoCart}
+         className="w-full absolute bottom-0 bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900">Add to Cart</button>
       </div>
       <div>
         <p className="text-xl py-4 font-semibold">{product.name}</p>
