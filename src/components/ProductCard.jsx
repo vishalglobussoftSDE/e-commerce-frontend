@@ -1,12 +1,11 @@
 import React from 'react'
-import product1 from '../assets/productImg/product1.png';
 import ThreeStar from '../assets/ThreeStar.png';
 
- const Product = () => {
+ const Product = ({imgSrc}) => {
   return (
     <div className='w-[270px] h-[320px] '>
      <div className='w-[270px] h-[250px] flex justify-center items-center bg-[#F5F5F5] rounded-md'>
-     <img src={product1} alt="" />
+     <img src={imgSrc} alt="" />
      </div>
       <div >
         <p className='text-xl py-4'>Breed Dry Dog Food</p>
@@ -22,4 +21,4 @@ import ThreeStar from '../assets/ThreeStar.png';
   )
 }
 
-export default Product
+export default Product;
