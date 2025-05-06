@@ -14,7 +14,7 @@ const Footer = () => {
             <div className='flex justify-between flex-wrap gap-8 p-10'>
                 {/* Subscription Section */}
                 <div className='flex flex-col gap-4 max-w-[250px]'>
-                    <h4 className='text-lg font-semibold'>Exclusive</h4>
+                    <h4 className='text-3xl font-semibold'>Exclusive</h4>
                     <p className='font-medium'>Subscribe</p>
                     <p>Get 10% off your first order</p>
                     <div className='border border-white rounded-sm'>
