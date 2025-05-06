@@ -9,6 +9,7 @@ import AboutPage from './Pages/AboutPage'
 import AccountPage from './Pages/AccountPage'
 import ContactPage from './Pages/ContactPage'
 import CheckOut from './Pages/CheckOut'
+import Today from './components/Today'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/contact" element={<ContactPage/>} />
         <Route path="*" element={<NotFoundPage/>} />
         <Route path='/checkOut' element={<CheckOut/>} />
+        <Route path='today' element={ <Today/>} />
       </Routes>
     </BrowserRouter>
   )
