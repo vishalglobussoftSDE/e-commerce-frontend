@@ -1,17 +1,17 @@
 import React from "react";
 import { FaUser, FaBoxOpen, FaTimesCircle, FaStar, FaSignOutAlt } from "react-icons/fa";
-
+import {Link} from "react-router-dom"
 const Dropdown = () => {
   return (
     <div className="absolute right-0 mt-2 w-60 bg-gradient-to-br from-gray-700 to-gray-900 text-white rounded-lg shadow-lg z-30 overflow-hidden">
       <ul className="py-2">
         <li className="flex items-center px-4 py-2 hover:bg-gray-800 cursor-pointer gap-3">
           <FaUser />
-          <span>Manage My Account</span>
+          <Link to="/account">Manage My Account</Link>
         </li>
         <li className="flex items-center px-4 py-2 hover:bg-gray-800 cursor-pointer gap-3">
           <FaBoxOpen />
-          <span>My Order</span>
+          <Link to="/cart">My Order</Link>
         </li>
         <li className="flex items-center px-4 py-2 hover:bg-gray-800 cursor-pointer gap-3">
           <FaTimesCircle />
@@ -23,7 +23,7 @@ const Dropdown = () => {
         </li>
         <li className="flex items-center px-4 py-2 hover:bg-gray-800 cursor-pointer gap-3">
           <FaSignOutAlt />
-          <span>Logout</span>
+          <Link to="/login">Logout</Link>
         </li>
       </ul>
     </div>

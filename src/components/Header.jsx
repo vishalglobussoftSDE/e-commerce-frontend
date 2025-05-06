@@ -54,7 +54,7 @@ const Header = () => {
                             <CiSearch className='text-xl cursor-pointer' />
                         </div>
                         <CiHeart className='text-xl cursor-pointer' />
-                        <BsCart3 className='text-xl cursor-pointer' />
+                        <Link to="/cart"><BsCart3 className='text-xl cursor-pointer' /></Link>
 
                         {/* User Dropdown */}
                         <div className="relative" ref={dropdownRef}>

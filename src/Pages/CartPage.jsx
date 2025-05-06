@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import DisplayCardSection from '../components/DisplayCardSection';
 import MonitorCartSmall from '../assets/monitorCartSmall.png';
+import Header from "../components/Header";
+import Footer from "../components/Footer.jsx";
 
 const CartPage = () => {
   const initialProducts = [
@@ -29,7 +31,9 @@ const CartPage = () => {
   );
 
   return (
-    <div className="p-8">
+    <div>
+      <Header/>
+      <div className="p-8">
       <div className="text-sm text-gray-500 mb-4">Home / <span className='text=-black'>Cart</span> </div>
 
       <div className="grid grid-cols-4 gap-6 text-sm text-gray-700 uppercase font-semibold mb-2 px-1">
@@ -63,21 +67,9 @@ const CartPage = () => {
       </div>
 
       {/* Summary Section */}
-      <div className=" flex flex-wrap justify-between p-6 mt-8 gap-6 rounded-md shadow-sm">
+      <div className=" flex flex-wrap justify-end p-6 mt-8 gap-6 rounded-md shadow-sm">
         {/* Coupon Code */}
-        <div className="flex gap-4 flex-wrap">
-          <input
-            className="border w-[300px] h-[56px] rounded-[4px] px-2"
-            placeholder="Coupon Code"
-            type="text"
-          />
-          <button
-            className="h-[56px] px-6 rounded-[4px] text-white"
-            style={{ backgroundColor: '#DB4444' }}
-          >
-            Apply Coupon
-          </button>
-        </div>
+        
 
         {/* Cart Total */}
         <div className="bg-gray-100 p-6 rounded-md w-full max-w-xs space-y-3">
@@ -105,6 +97,8 @@ const CartPage = () => {
           </button>
         </div>
       </div>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };
