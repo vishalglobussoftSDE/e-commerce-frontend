@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import OurProduct from "../components/HomePageComponents/OurProduct";
+import Carousel from "../components/Carousel";
 import NewArrivals from "../components/HomePageComponents/NewArrivals";
 import AboutServices1 from "../components/AboutServices1";
 import servicesPng5 from "../assets/about-img/about-png5.png";
@@ -13,11 +14,20 @@ const HomePage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow mx-8 px-8">
-        <Sidebar />
+      <main className="flex-grow px-8 py-4">
+        <div className="flex gap-6">
+          <div className="w-1/4">
+            <Sidebar />
+          </div>
+          <div className="w-3/4 mt-[50px]">
+            <Carousel />
+          </div>
+        </div>
       </main>
+      
       <div className="mx-14">
         <OurProduct />
+        <hr className="mt-6 border-gray-300" />
         <NewArrivals />
 
         <div className="flex justify-center gap-20 mb-34">
