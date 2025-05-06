@@ -5,15 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
-
+import Timer from './Timer';
 
 const Today = () => {
-
-    // const [rightMargin, setRightMargin]= useState(0);
-    const currentDate=3;
-    // const[currentHour, setCurrentHour]= useState(12);
-    // const[currentMinutes, setCurrentMinutes]= useState(50);
-    // const[currentSeconds, setCurrentSeconds]= useState(43);
 
     let sliderRef=useRef();
 
@@ -41,7 +35,6 @@ const Today = () => {
         "productImages/product8.png",
     ]
 
-
   return (
 
     <div className=''>
@@ -50,35 +43,7 @@ const Today = () => {
         </div>
         <div className='flex items-center mt-5'>
             <h2 className='text-[36px] font-[600] mt-3 mr-21'>Flash Sales</h2>
-            <div className='flex gap-[10px]'>
-                <div className='flex flex-col items-center'>
-                    <p className='text-[12px]'>Days</p>
-                    <div>
-                        <p className='font-[700] text-[32px]'>{currentDate}</p>
-                    </div>
-                </div>
-                <div className='mt-7 text-red-500 font-[800]'>:</div>
-                <div className='flex flex-col items-center'>
-                    <p className='text-[12px]'>Hours</p>
-                    <div>
-                        <p className='font-[700] text-[32px]'>{currentDate}</p>
-                    </div>
-                </div>
-                <div className='mt-7 text-red-500 font-[800]'>:</div>
-                <div className='flex flex-col items-center'>
-                    <p className='text-[12px]'>Minutes</p>
-                    <div>
-                        <p className='font-[700] text-[32px]'>{currentDate}</p>
-                    </div>
-                </div>
-                <div className='mt-7 text-red-500 font-[800]'>:</div>
-                <div className='flex flex-col items-center'>
-                    <p className='text-[12px]'>Seconds</p>
-                    <div>
-                        <p className='font-[700] text-[32px]'>{currentDate}</p>
-                    </div>
-                </div>
-            </div>
+            <Timer day="10" month="05" year="2025" hours="12" minutes="20"/>            
             <div className='ml-auto mr-10'>
                 <button className='p-5 bg-gray-100 rounded-full mr-3 cursor-pointer' onClick={previous}><FaArrowLeftLong/></button>
                 <button className='p-5 bg-gray-100 rounded-full cursor-pointer' onClick={next} ><FaArrowRightLong/></button>
@@ -93,12 +58,11 @@ const Today = () => {
                 return <Product imgSrc={item} />
             })}       
         </Slider>      
-        </div>
+        </div>        
         
         <div className='flex w-full justify-center mt-15'>
             <button className='buttons'>View product</button>
-        </div>
-        
+        </div>        
         
     </div>
   )
