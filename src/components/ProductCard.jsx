@@ -42,7 +42,7 @@ const ProductCard = ({ product }) => {
           className="max-h-[100%] max-w-[100%] object-contain"
           src={imageUrl}
           alt={product.name}
-        />
+        /> 
         <button
           onClick={addtoCart}
          className="w-full absolute bottom-0 bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900">Add to Cart</button>
