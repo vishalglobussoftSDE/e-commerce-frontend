@@ -5,7 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Dropdown from './Dropdown';
 
-const Header = () => {
+const Header = ({products = []}) => {
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef();
 
@@ -20,6 +20,15 @@ const Header = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    const handleInput = (e) => {
+        const value = e.target.value.toLowerCase();
+        const matches = products.filter((p) =>
+          p.name.toLowerCase().includes(value)
+        );
+        console.log("Matching products:", matches); 
+      };
+      
 
     return (
         <div className='h-[140px] border-b border-gray-300'>
@@ -50,7 +59,7 @@ const Header = () => {
 
                     <div className='flex items-center gap-4'>
                         <div className='bg-gray-100 flex items-center h-[38px] px-4'>
-                            <input type='text' placeholder='What are you looking for?' className='text-[12px] px-2 h-[18px] bg-gray-100 outline-none' />
+                            <input onChange={handleInput} name='search' type='text' placeholder='What are you looking for?' className='text-[12px] px-2 h-[18px] bg-gray-100 outline-none' />
                             <CiSearch className='text-xl cursor-pointer' />
                         </div>
                         <CiHeart className='text-xl cursor-pointer' />
