@@ -4,6 +4,7 @@ import MonitorCartSmall from "../assets/monitorCartSmall.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer.jsx";
 import { Link } from "react-router-dom";
+import { FaTrashAlt } from "react-icons/fa";
 
 const CartPage = () => {
   const initialProducts = [
@@ -39,11 +40,12 @@ const CartPage = () => {
           Home / <span className="text=-black">Cart</span>{" "}
         </div>
 
-        <div className="grid grid-cols-4 gap-6 text-sm text-gray-700 uppercase font-semibold mb-2 px-1">
+        <div className="grid grid-cols-5 gap-6 text-sm text-gray-700 uppercase font-semibold mb-2 px-1">
           <div>Product</div>
           <div>Price</div>
           <div>Quantity</div>
           <div>Subtotal</div>
+          <div>delete</div>
         </div>
 
         {/* Product cards */}
@@ -55,6 +57,7 @@ const CartPage = () => {
               quantity={quantities[idx]}
               onIncrease={() => increaseQuantity(idx)}
               onDecrease={() => decreaseQuantity(idx)}
+              deleteIcon={<FaTrashAlt className="text-red-600 cursor-pointer" />}
             />
           ))}
         </div>

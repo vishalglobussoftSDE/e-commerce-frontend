@@ -3,21 +3,32 @@ import ThreeStar from "/ratingImages/ThreeStar.png";
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
+import axios from "axios";
 
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = useState(false);
 
   const addtoCart = () => {
-    console.log("Product added to cart:", {
-      id: product.id,
+    axios.post("http://localhost:5000/api/cart", {
+      id: product._id,
       name: product.name,
       price: product.price,
       image: imageUrl,
       stock: product.stock
+    })
+    .then(response => {
+      console.log("Product added to cart:", response.data);
+    })
+    .catch(error => {
+      console.error("Error adding product to cart:", error);
     });
+
+
   
     
   };
+
+  // const { addToCart } = useContext(CartContext);
   
 
   const imageUrl =
