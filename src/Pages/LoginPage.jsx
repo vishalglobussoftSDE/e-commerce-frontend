@@ -27,7 +27,6 @@ const LoginPage = () => {
       [name] : value
     })
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Submitting user:", user);
@@ -40,9 +39,14 @@ const LoginPage = () => {
       });
   
       console.log("Login successful:", response.data);
-
+  
+     
+      const { token, user: userInfo } = response.data;
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(userInfo));
+  
+      
       navigate("/");
-      // You can redirect or save token here
     } catch (error) {
       if (error.response) {
         console.error("Login failed:", error.response.data);
@@ -51,6 +55,7 @@ const LoginPage = () => {
       }
     }
   };
+  
   
   return (
     <div>
