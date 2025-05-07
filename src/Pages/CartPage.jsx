@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DisplayCardSection from "../components/DisplayCardSection";
 import MonitorCartSmall from "../assets/monitorCartSmall.png";
 import Header from "../components/Header";
@@ -12,6 +12,14 @@ const CartPage = () => {
     { name: "Wireless Keyboard", price: 120, image: MonitorCartSmall },
     { name: "Gaming Mouse", price: 85, image: MonitorCartSmall },
   ];
+
+  const [initialProduct1, setInitialProduvt1] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/api/v1/product/all")
+      .then((res) => res.json())
+      .then((data) => setInitialProduvt1(data.products))
+      .catch((err) => console.error("Error fetching products:", err));
+  }, []);
 
   const [quantities, setQuantities] = useState(initialProducts.map(() => 1));
 
@@ -50,14 +58,16 @@ const CartPage = () => {
 
         {/* Product cards */}
         <div>
-          {initialProducts.map((product, idx) => (
+          {initialProduct1.map((product, idx) => (
             <DisplayCardSection
               key={idx}
               product={product}
               quantity={quantities[idx]}
               onIncrease={() => increaseQuantity(idx)}
               onDecrease={() => decreaseQuantity(idx)}
-              deleteIcon={<FaTrashAlt className="text-red-600 cursor-pointer" />}
+              deleteIcon={
+                <FaTrashAlt className="text-red-600 cursor-pointer" />
+              }
             />
           ))}
         </div>
@@ -66,8 +76,6 @@ const CartPage = () => {
           <Link to="/" className="border px-4 py-2 rounded hover:bg-gray-100">
             Return To Shop
           </Link>
-
-          
         </div>
 
         {/* Summary Section */}

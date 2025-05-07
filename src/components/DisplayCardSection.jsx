@@ -38,7 +38,7 @@ const DisplayCardSection = ({ product, quantity, onIncrease, onDecrease, deleteI
 
       <div>
         <div className="border rounded px-2 py-1 flex items-center justify-between w-[70px]">
-          <span className="text-sm font-medium">{quantity.toString().padStart(2, '0')}</span>
+          
           <div className="flex flex-col ml-2 space-y-1">
             <button onClick={onIncrease} className="text-xs hover:text-black text-gray-600">
               <FontAwesomeIcon icon={faChevronUp} />

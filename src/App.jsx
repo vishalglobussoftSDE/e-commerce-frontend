@@ -12,7 +12,10 @@ import CheckOut from './Pages/CheckOut'
 import Today from './components/Today'
 import OrderPlaced from './Pages/OrderPlacedPage'
 
+
+
 const App = () => {
+
   return (
     <BrowserRouter>
       <Routes>
