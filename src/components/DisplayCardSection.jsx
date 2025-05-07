@@ -2,12 +2,12 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const DisplayCardSection = ({ product, quantity, onIncrease, onDecrease }) => {
+const DisplayCardSection = ({ product, quantity, onIncrease, onDecrease, deleteIcon }) => {
   const { name, price, image } = product;
   const subtotal = price * quantity;
 
   return (
-    <div className="grid grid-cols-4 gap-6 items-center border border-gray-300 rounded-md p-4 mb-4 shadow-sm">
+    <div className="grid grid-cols-5 gap-6 justify-center items-center border border-gray-300 rounded-md p-4 mb-4 shadow-sm">
 
       <div className="flex items-center gap-4">
         <img src={image} alt={name} className="w-14 h-14 object-cover" />
@@ -28,12 +28,15 @@ const DisplayCardSection = ({ product, quantity, onIncrease, onDecrease }) => {
             <button onClick={onDecrease} className="text-xs hover:text-black text-gray-600">
               <FontAwesomeIcon icon={faChevronDown} />
             </button>
+          
           </div>
         </div>
+        
       </div>
 
 
       <div className="text-sm">${subtotal}</div>
+      <div>{deleteIcon}</div>
     </div>
   );
 };
