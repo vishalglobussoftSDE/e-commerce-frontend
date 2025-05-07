@@ -8,25 +8,24 @@ import axios from "axios";
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = useState(false);
 
-  const addtoCart = () => {
-    axios.post("http://localhost:5000/api/cart", {
-      id: product._id,
-      name: product.name,
-      price: product.price,
-      image: imageUrl,
-      stock: product.stock
-    })
-    .then(response => {
-      console.log("Product added to cart:", response.data);
-    })
-    .catch(error => {
-      console.error("Error adding product to cart:", error);
-    });
-
-
-  
-    
+  const addtoCart = async () => {
+    try {
+      const token = localStorage.getItem("token"); 
+      const res = await axios.post(
+        "http://localhost:3000/api/v1/user/add-cart",
+        { productId: product._id, quantity: 1 },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, 
+          },
+        }
+      );
+      console.log("Added to cart:", res.data);
+    } catch (error) {
+      console.error("Add to cart error:", error.response?.data || error.message);
+    }
   };
+  
 
   // const { addToCart } = useContext(CartContext);
   
