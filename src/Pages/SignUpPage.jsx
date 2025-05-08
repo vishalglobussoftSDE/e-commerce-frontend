@@ -1,11 +1,11 @@
-import Header from "../components/Header";
+
 import signupImg from "../assets/logSign-Img/log-sign.png";
 import { Link } from "react-router-dom";
 import googleIcon from "../assets/logSign-Img/googleIcon.png";
-import Footer from "../components/Footer.jsx";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const [user, setUser] = useState({
@@ -41,10 +41,13 @@ const SignUpPage = () => {
 
       navigate("/")
       // You can redirect or save token here
+      toast.success("Signup successful!");
     } catch (error) {
       if (error.response) {
+        toast.error(error.response.data.message || "Signup failed. Please try again.");
         console.error("Signup failed:", error.response.data);
       } else {
+        toast.error("Network or server error: " + error.message);
         console.error("Network or server error:", error.message);
       }
     }
