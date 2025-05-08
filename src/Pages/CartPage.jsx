@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 
+
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [quantities, setQuantities] = useState([]);
@@ -92,7 +93,7 @@ const CartPage = () => {
 
   return (
     <div>
-      <Header />
+     
       <div className="p-8">
         <div className="text-sm text-gray-500 mb-4">
           Home / <span className="text-black">Cart</span>
@@ -166,7 +167,6 @@ const CartPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

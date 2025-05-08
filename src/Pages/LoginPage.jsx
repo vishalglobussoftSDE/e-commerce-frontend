@@ -1,13 +1,9 @@
 import { useState } from "react";
-import Header from "../components/Header";
 import signupImg from "../assets/logSign-Img/log-sign.png";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer.jsx";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-
-
+import {  toast } from 'react-toastify';
 
 const LoginPage = () => {
 
@@ -50,8 +46,10 @@ const LoginPage = () => {
     } catch (error) {
       if (error.response) {
         console.error("Login failed:", error.response.data);
+        toast.error(error.response.data.message || "Login failed. Please try again.");
       } else {
         console.error("Network or server error:", error.message);
+        toast.error("Network or server error: " + error.message);
       }
     }
   };
@@ -59,7 +57,7 @@ const LoginPage = () => {
   
   return (
     <div>
-      <Header />
+      
       <div className="my-16 flex justify-between items-center">
         <img className="h-[581px] "  src={signupImg} alt="" />
         <div className="flex flex-col mr-60 gap-6">
@@ -94,7 +92,7 @@ const LoginPage = () => {
           </form>
         </div>
       </div>
-      <Footer></Footer>
+      
     </div>
   );
 };

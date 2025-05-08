@@ -1,13 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import IconsPhone from "../assets/Iconsphone.png";
 import Iconsmail from "../assets/Iconsmail.png";
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer";
+import axios from "axios";
+import {  toast } from 'react-toastify';
 
 const ContactPage = () => {
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setContact({
+      ...contact,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:3000/api/v1/form/contact", contact, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      setContact({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      toast.success("Message sent successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to send message. Please try again.");
+    }
+  };
+
+  
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      setContact((prev) => ({
+        ...prev,
+        name: user.name || "",
+        email: user.email || "",
+      }));
+    }
+  }, []);
+
   return (
     <div>
-      <Header />
       <div className="pt-8 pb-8 px-[10%] bg-white min-h-screen flex flex-col gap-30">
         {/* Breadcrumb */}
         <div className="text-sm text-gray-500 mb-6">
@@ -52,33 +103,43 @@ const ContactPage = () => {
 
           {/* Right Form */}
           <div className="bg-white rounded shadow p-6 w-full ">
-            <form className="flex flex-col gap-4">
-              {/* Input Fields Row */}
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name *"
-                  className="p-3  rounded bg-gray-100 text-sm"
+                  className="p-3 rounded bg-gray-100 text-sm"
+                  onChange={handleInput}
+                  value={contact.name}
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your Email *"
-                  className="p-3  rounded bg-gray-100 text-sm"
+                  className="p-3 rounded bg-gray-100 text-sm"
+                  onChange={handleInput}
+                  value={contact.email}
                 />
                 <input
                   type="text"
+                  name="phone"
                   placeholder="Your Phone *"
-                  className="p-3  rounded bg-gray-100 text-sm"
+                  className="p-3 rounded bg-gray-100 text-sm"
+                  onChange={handleInput}
+                  value={contact.phone}
                 />
               </div>
-              {/* Message Textarea */}
+
               <textarea
                 placeholder="Your Message"
                 rows="6"
-                className="p-3  rounded bg-gray-100 text-sm resize-none"
+                name="message"
+                className="p-3 rounded bg-gray-100 text-sm resize-none"
+                onChange={handleInput}
+                value={contact.message}
               ></textarea>
 
-              {/* Submit Button */}
               <div className="flex justify-end">
                 <button
                   type="submit"
@@ -91,7 +152,6 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -25,7 +25,7 @@ const HomePage = () => {
   
   return (
     <div className="min-h-screen flex flex-col">
-      <Header products={products} />
+      
       <main className="flex-grow px-8 py-4">
         <div className="flex gap-6">
           <div className="w-1/4">
@@ -61,7 +61,6 @@ const HomePage = () => {
           />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
