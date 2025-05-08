@@ -3,12 +3,16 @@ import axios from "axios";
 import DisplayCardSection from "../components/DisplayCardSection";
 import Header from "../components/Header";
 import Footer from "../components/Footer.jsx";
+import { useNavigate } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [quantities, setQuantities] = useState([]);
+  const navigate = useNavigate();
+
 
   // Fetch cart data from backend
   useEffect(() => {
@@ -67,6 +71,24 @@ const CartPage = () => {
     (acc, item, idx) => acc + item.price * quantities[idx],
     0
   );
+
+  const handleConfirmOrder = async () => {
+    try {
+      await axios.post(
+        "http://localhost:3000/api/v1/user/place-order",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      // alert("Order placed!");
+      navigate("/placed"); // navigate to order placed page
+    } catch (err) {
+      console.error("Error placing order:", err);
+    }
+  };
 
   return (
     <div>
@@ -132,13 +154,15 @@ const CartPage = () => {
               <p>${subtotal.toFixed(2)}</p>
             </div>
             <hr />
-            <Link
-              to="/placed"
+            <button
+              onClick={handleConfirmOrder}
               className="w-full text-white py-2 px-4 rounded"
               style={{ background: "#DB4444" }}
             >
-              Proceed to Checkout
-            </Link>
+              Proceed to Confirm order
+            </button>
+
+
           </div>
         </div>
       </div>
