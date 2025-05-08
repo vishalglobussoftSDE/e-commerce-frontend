@@ -8,6 +8,9 @@ import Dropdown from './Dropdown';
 const Header = ({products = []}) => {
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef();
+    const RefreshPageOnClick = () => {
+          window.location.reload(); // Refresh the page
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -48,7 +51,7 @@ const Header = ({products = []}) => {
 
             <div className='container'>
                 <div className='h-[38px] mt-[30px] flex items-center justify-between'>
-                    <h1 className='font-bold text-2xl tracking-wide'>Exclusive</h1>
+                    <h1 onClick={RefreshPageOnClick } className='font-bold text-2xl tracking-wide'>Exclusive</h1>
 
                     <ul className='flex gap-6 text-[16px]'>
                         <Link to='/'><li>Home</li></Link>
