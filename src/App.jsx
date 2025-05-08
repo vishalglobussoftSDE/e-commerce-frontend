@@ -13,16 +13,25 @@ import HomepageComp from './Pages/HomepageComp';
 import Footer from './components/Footer';
 import OrderPlaced from './Pages/OrderPlacedPage'
 import Header1 from './components/Header1';
+import { useEffect, useState } from 'react';
 
 
 
 const App = () => {
 
+  const [products, setProducts] = useState([]);
+    
+      useEffect(() => {
+        fetch("http://localhost:3000/api/v1/product/all")
+          .then((res) => res.json())
+          .then((data) => setProducts(data.products))
+          .catch((err) => console.error("Error fetching products:", err));
+      }, []);
+
   return (
     <BrowserRouter>
-      <Header1/>
+      <Header1 products={products}/>
       <Routes>
-       
         <Route path='/' element={<HomepageComp/>} />
         <Route path="/cart" element={<CartPage/>} />
         <Route path = '/login' element={<LoginPage/>} />
