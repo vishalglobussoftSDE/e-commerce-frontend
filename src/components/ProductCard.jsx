@@ -3,6 +3,7 @@ import ThreeStar from "/ratingImages/ThreeStar.png";
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
+import axios from "axios";
 
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = useState(false);
@@ -53,7 +54,7 @@ const ProductCard = ({ product }) => {
           alt={product.name}
         /> 
         <button
-          
+          onClick={addtoCart}
          className="w-full absolute bottom-0 bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900">Add to Cart</button>
       </div>
       <div>
