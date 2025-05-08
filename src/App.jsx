@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import OrderPlaced from './Pages/OrderPlacedPage'
 import Header1 from './components/Header1';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 
@@ -21,12 +22,17 @@ const App = () => {
 
   const [products, setProducts] = useState([]);
     
-      useEffect(() => {
-        fetch("http://localhost:3000/api/v1/product/all")
-          .then((res) => res.json())
-          .then((data) => setProducts(data.products))
-          .catch((err) => console.error("Error fetching products:", err));
-      }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/v1/product/all")
+      .then((res) => {
+        setProducts(res.data.products);
+      })
+      .catch((err) => {
+        console.error("Error fetching products:", err);
+      });
+  }, []);
+
 
   return (
     <BrowserRouter>
