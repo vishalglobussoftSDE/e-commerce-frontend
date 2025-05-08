@@ -6,7 +6,7 @@ import { FaCheckCircle } from "react-icons/fa"; // Confirmation icon
 const OrderPlacedPage = () => {
   return (
     <div>
-      <Header />
+      
       <div className="flex flex-col min-h-screen">
         {/* Breadcrumb + Content Wrapper */}
         <div className="flex-grow p-8 flex flex-col">
@@ -34,7 +34,7 @@ const OrderPlacedPage = () => {
           </main>
         </div>
 
-        <Footer />
+        
       </div>
     </div>
   );

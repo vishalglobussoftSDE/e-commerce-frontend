@@ -20,7 +20,7 @@ import Header from "../components/Header.jsx"
 const AboutPage = () => {
   return (
     <div>
-      <Header/>
+      
       <div className="m-8 p-8">
         <p>
           <Link to="/">Home  </Link>/
@@ -115,7 +115,6 @@ const AboutPage = () => {
           />
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

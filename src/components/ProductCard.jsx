@@ -4,6 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
 import axios from "axios";
+import {  toast } from 'react-toastify';
 
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = useState(false);
@@ -20,8 +21,14 @@ const ProductCard = ({ product }) => {
           },
         }
       );
+      toast.success("Product added to cart successfully!");
       console.log("Added to cart:", res.data);
     } catch (error) {
+      if (error.response) {
+        toast.error(error.response.data.message || "Failed to add to cart.");
+      } else {
+        toast.error("Network or server error: " + error.message);
+      }
       console.error("Add to cart error:", error.response?.data || error.message);
     }
   };

@@ -5,7 +5,7 @@ import Header from "../components/Header";
 const NotFoundPage = () => {
   return (
     <div>
-      <Header />
+      
       <div className="flex flex-col min-h-screen">
         {/* Breadcrumb + Content Wrapper */}
         <div className="flex-grow p-8 flex flex-col">
@@ -32,8 +32,7 @@ const NotFoundPage = () => {
           </main>
         </div>
 
-        {/* Sticky Footer at Bottom */}
-        <Footer />
+        
       </div>
     </div>
   );

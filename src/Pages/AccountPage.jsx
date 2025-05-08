@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer";
 import { useState } from "react";
 
 const AccountPage = () => {
@@ -15,6 +13,8 @@ const AccountPage = () => {
     confirmPassword:""
   })
 
+  
+
   const handleInput = (e)=>{
     let name = e.target.name 
     let value = e.target.value 
@@ -28,7 +28,7 @@ const AccountPage = () => {
 
   return (
     <div>
-      <Header />
+      
       <div className="my-4 mx-14">
         <div className="flex justify-between">
           <div>
@@ -135,7 +135,6 @@ const AccountPage = () => {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
 
   );

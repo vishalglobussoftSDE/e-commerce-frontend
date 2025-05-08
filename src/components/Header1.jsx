@@ -30,7 +30,7 @@ const Header1 = ({products = []}) => {
       };
 
     return (
-        <div className='h-[140px] border-b border-gray-300'>
+        <div className='sticky top-0 z-50 bg-white shadow h-[140px] border-b border-gray-300'>
             <div className='bg-black'>
                 <div className='container grid grid-cols-3 h-[48px] content-center text-white text-[14px]'>
                     <div className='col-span-2 text-right'>
