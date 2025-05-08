@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductSectionLayout = ({ title, subtitle,}) => {
+const ProductSectionLayout1 = ({ title, subtitle,}) => {
   return (
     <div className="flex flex-col gap-[60px] p-4">
       {/* Header Section */}
@@ -18,4 +18,4 @@ const ProductSectionLayout = ({ title, subtitle,}) => {
   );
 };
 
-export default ProductSectionLayout;
+export default ProductSectionLayout1;

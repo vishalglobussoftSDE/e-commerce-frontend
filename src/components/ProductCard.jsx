@@ -3,9 +3,32 @@ import ThreeStar from "/ratingImages/ThreeStar.png";
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
+import axios from "axios";
 
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = useState(false);
+
+  const addtoCart = async () => {
+    try {
+      const token = localStorage.getItem("token"); 
+      const res = await axios.post(
+        "http://localhost:3000/api/v1/user/add-cart",
+        { productId: product._id, quantity: 1 },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, 
+          },
+        }
+      );
+      console.log("Added to cart:", res.data);
+    } catch (error) {
+      console.error("Add to cart error:", error.response?.data || error.message);
+    }
+  };
+  
+
+  // const { addToCart } = useContext(CartContext);
+  
 
   const imageUrl =
     product.images && product.images.length > 0
@@ -14,7 +37,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="w-[270px]">
-      <div className="w-[270px] relative h-[250px] flex justify-center items-center bg-[#F5F5F5] rounded-md">
+      <div className="w-[270px] relative h-[350px] flex flex-col justify-center items-center bg-[#F5F5F5] rounded-md">
         <div
           className="absolute top-5 right-3 cursor-pointer"
           onClick={() => setLiked(!liked)}
@@ -29,7 +52,10 @@ const ProductCard = ({ product }) => {
           className="max-h-[100%] max-w-[100%] object-contain"
           src={imageUrl}
           alt={product.name}
-        />
+        /> 
+        <button
+          onClick={addtoCart}
+         className="w-full absolute bottom-0 bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900">Add to Cart</button>
       </div>
       <div>
         <p className="text-xl py-4 font-semibold">{product.name}</p>

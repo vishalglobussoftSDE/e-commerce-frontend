@@ -3,6 +3,7 @@ import newArrivalImg1 from "../../assets/newArrival-img/new arrival img1.png";
 import newArrivalImg2 from "../../assets/newArrival-img/new arrival img2.png";
 import newArrivalImg3 from "../../assets/newArrival-img/new arrival img3.png";
 import newArrivalImg4 from "../../assets/newArrival-img/new arrival img4.png";
+import ProductSectionLayout from "../ProductSectionLayout1";
 
 const NewArrivals = () => {
 

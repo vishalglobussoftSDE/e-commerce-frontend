@@ -12,6 +12,9 @@ import CheckOut from './Pages/CheckOut';
 import HomepageComp from './Pages/HomepageComp';
 import Footer from './components/Footer';
 import Main from './Pages/Main';
+import OrderPlaced from './Pages/OrderPlacedPage'
+
+
 
 const App = () => {
 
@@ -31,6 +34,7 @@ const App = () => {
         <Route path='/checkOut' element={<CheckOut/>} />
         <Route path='/test' element={<Footer/>} />
         <Route path="/home" element={<HomepageComp/>} />
+        <Route path='placed' element={ <OrderPlaced/>} />
       </Routes>
     </BrowserRouter>
   )

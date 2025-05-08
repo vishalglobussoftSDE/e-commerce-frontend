@@ -9,11 +9,23 @@ import AboutServices1 from "../components/AboutServices1";
 import servicesPng5 from "../assets/about-img/about-png5.png";
 import servicesPng6 from "../assets/about-img/about-png6.png";
 import servicesPng7 from "../assets/about-img/about-png7.png";
+import { useEffect , useState} from 'react'
 
 const HomePage = () => {
+
+
+    const [products, setProducts] = useState([]);
+  
+    useEffect(() => {
+      fetch("http://localhost:3000/api/v1/product/all")
+        .then((res) => res.json())
+        .then((data) => setProducts(data.products))
+        .catch((err) => console.error("Error fetching products:", err));
+    }, []);
+  
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header products={products} />
       <main className="flex-grow px-8 py-4">
         <div className="flex gap-6">
           <div className="w-1/4">

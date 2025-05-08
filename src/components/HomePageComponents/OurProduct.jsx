@@ -13,10 +13,10 @@ const OurProduct = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/product/all')
-      .then(res => res.json())
-      .then(data => setProducts(data.products))
-      .catch(err => console.error('Error fetching products:', err));
+    fetch("http://localhost:3000/api/v1/product/all")
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products))
+      .catch((err) => console.error("Error fetching products:", err));
   }, []);
 
   const next = () => {
@@ -46,6 +46,7 @@ const OurProduct = () => {
           <button className='p-5 bg-gray-100 rounded-full mr-3 cursor-pointer' onClick={previous}><FaArrowLeftLong /></button>
           <button className='p-5 bg-gray-100 rounded-full cursor-pointer' onClick={next} ><FaArrowRightLong /></button>
         </div>
+        
       </div>
 
       <div className='mt-10' >
@@ -59,8 +60,14 @@ const OurProduct = () => {
         </Slider>
       </div>
 
-      <div className='flex w-full justify-center mt-15'>
-        <button className='buttons'>View All products</button>
+      {/* View All Button */}
+      <div className="flex justify-center items-center mt-[60px]">
+        <button
+          onClick={() => navigate('/products')}
+          className="bg-[#DB4444] text-white rounded-[5px] py-[16px] px-[48px]"
+        >
+          View All Products
+        </button>
       </div>
     </div>
   )
