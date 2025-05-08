@@ -45,7 +45,7 @@ const ThisMonth = () => {
 
       <div className='mt-10 flex gap-15' >
         {categoriesList.map((item)=>{
-                return <ThisMonthCard imageUrl={item.imageUrl} name={item.name} price={item.price} stock={item.stock} />
+                return <ThisMonthCard key={item.name} imageUrl={item.imageUrl} name={item.name} price={item.price} stock={item.stock} />
             })}
       </div>
     </div>
