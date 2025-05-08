@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DisplayCardSection from "../components/DisplayCardSection";
-import Header from "../components/Header";
-import Footer from "../components/Footer.jsx";
+
 import { useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
@@ -88,6 +87,7 @@ const CartPage = () => {
       navigate("/placed"); // navigate to order placed page
     } catch (err) {
       console.error("Error placing order:", err);
+      
     }
   };
 
