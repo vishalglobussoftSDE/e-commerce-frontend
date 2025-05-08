@@ -10,4 +10,4 @@ const AboutServices = ({img, heading ,text, bgColor}) => {
   )
 }
 
-export default AboutServices
+export default AboutServices;

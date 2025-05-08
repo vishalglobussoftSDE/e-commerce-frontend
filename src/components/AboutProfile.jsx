@@ -10,4 +10,4 @@ const AboutProfile = ({img , name , position}) => {
   )
 }
 
-export default AboutProfile
+export default AboutProfile;

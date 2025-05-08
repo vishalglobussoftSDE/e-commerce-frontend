@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import dropdown from '../assets/DropDown.png';
+import { FaChevronRight } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
-    <div className="w-56 px-8 bg-white py-12 border-r border-gray-200">
-      <div className="flex flex-col gap-4">
+    <div className="w-55 font-[500] flex text min-h-[450px] bg-white pt-12 border-r border-gray-200">
+      <div className="flex mt-auto  flex-col gap-5">
         <div className="flex justify-between items-center">
           <Link to="/womens-fashion" className="hover:underline">Women's Fashion</Link>
-          <img src={dropdown} alt="Dropdown" className="w-4 h-4" />
+          <button className='ml-9 w-4 h-4'><FaChevronRight/></button>
+      
         </div>
         <div className="flex justify-between items-center">
           <Link to="/mens-fashion" className="hover:underline">Men's Fashion</Link>
-          <img src={dropdown} alt="Dropdown" className="w-4 h-4" />
+          <button className='ml-9 w-4 h-4'><FaChevronRight/></button>
+          
         </div>
         <Link to="/electronics" className="hover:underline">Electronics</Link>
         <Link to="/home-lifestyle" className="hover:underline">Home & Lifestyle</Link>
