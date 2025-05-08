@@ -4,13 +4,8 @@ import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
 
-const ProductCard = ({ product }) => {
+const ThisMonthCard = ({ imageUrl, name, price, stock }) => {
   const [liked, setLiked] = useState(false);
-
-  const imageUrl =
-    product.images && product.images.length > 0
-      ? `http://localhost:3000${product.images[0]}`
-      : "https://via.placeholder.com/270x250?text=No+Image";
 
   return (
     <div className="w-[270px]">
@@ -28,23 +23,23 @@ const ProductCard = ({ product }) => {
         <img
           className="max-h-[100%] max-w-[100%] object-contain"
           src={imageUrl}
-          alt={product.name}
+          alt={name}
         />
       </div>
       <div>
-        <p className="text-xl py-4 font-semibold">{product.name}</p>
+        <p className="text-xl py-4 font-semibold">{name}</p>
         <div className="flex gap-3.5 items-center">
-          <p className="text-red-700">₹{product.price}</p>
+          <p className="text-red-700">₹{price}</p>
           <img
             className="w-[100px] h-[20px]"
             src={ThreeStar}
             alt="rating-stars"
           />
-          <p className="text-gray-600 text-sm">({product.stock})</p>
+          <p className="text-gray-600 text-sm">({stock})</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default ProductCard;
+export default ThisMonthCard;
