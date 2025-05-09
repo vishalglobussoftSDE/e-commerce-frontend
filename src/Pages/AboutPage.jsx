@@ -1,6 +1,5 @@
 import React from "react";
 import AboutServices from "../components/AboutServices.jsx";
-import AboutServices1 from "../components/AboutServices1.jsx";
 import AboutProfile from "../components/AboutProfile.jsx";
 import aboutImg1 from "../assets/about-img/about-img1.png";
 import servicesPng1 from "../assets/about-img/about-png1.png";
@@ -13,21 +12,20 @@ import profileImg3 from "../assets/about-img/about-img4.png";
 import servicesPng5 from "../assets/about-img/about-png5.png";
 import servicesPng6 from "../assets/about-img/about-png6.png";
 import servicesPng7 from "../assets/about-img/about-png7.png";
-import Footer from "../components/Footer.jsx";
 import { Link } from "react-router-dom";
-import Header from "../components/Header.jsx"
+import Achievement from "../components/Achievement.jsx";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="container">
       
-      <div className="m-8 p-8">
+      <div className="my-8 container">
         <p>
           <Link to="/">Home  </Link>/
           <Link>  About</Link>
         </p>
 
-        <div className="flex my-14 justify-between items-center">
+        <div className="flex my-14 justify-between items-center ">
           <div className="flex flex-col gap-14 w-[570px] h-[336px] justify-center">
             <h1 className="text-6xl font-semibold tracking-widest">
               Our Story
@@ -55,30 +53,29 @@ const AboutPage = () => {
         </div>
 
         <div className="flex justify-center gap-26 my-40">
-          <AboutServices
+          <Achievement
             img={servicesPng1}
             heading="10.5K"
             text="Sellers active on our site"
           />
-          <AboutServices
+          <Achievement
             img={servicesPng2}
             heading="33K"
             text="Monthly product sale"
-            bgColor="#DB4444"
           />
-          <AboutServices
+          <Achievement
             img={servicesPng3}
             heading="45.5K"
             text="Customer active in our site"
           />
-          <AboutServices
+          <Achievement
             img={servicesPng4}
             heading="25K"
             text="Annual gross sale in our site"
           />
         </div>
 
-        <div className="flex justify-center gap-36">
+        <div className="flex justify-center gap-56">
           <AboutProfile
             img={profileImg1}
             name="Tom Cruise"
@@ -97,18 +94,18 @@ const AboutPage = () => {
         </div>
 
         <div className="flex justify-center gap-20 my-36">
-          <AboutServices1
+          <AboutServices
             img={servicesPng5}
             heading="FREE AND FAST DELIVERY"
             text="Free delivery for all orders over $140"
           />
 
-          <AboutServices1
+          <AboutServices
             img={servicesPng6}
             heading="24/7 CUSTOMER SERVICE"
             text="Friendly 24/7 customer support"
           />
-          <AboutServices1
+          <AboutServices
             img={servicesPng7}
             heading="MONEY BACK GUARANTEE"
             text="We reurn money within 30 days"

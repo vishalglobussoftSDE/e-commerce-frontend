@@ -58,7 +58,7 @@ const Header1 = ({products = []}) => {
 
                     <div className='flex items-center gap-4'>
                         <div className='bg-gray-100 flex items-center h-[38px] px-4'>
-                            <input onChange={handleInput} name='search' type='text' placeholder='What are you looking for?' className='text-[12px] px-2 h-[18px] bg-gray-100 outline-none' />
+                            <input onChange={handleInput} name='search' type='text' placeholder='What are you looking for?' className='text-[12px] px-4 w-3xl rounded-md h-[18px] bg-gray-100 outline-none' />
                             <CiSearch className='text-xl cursor-pointer' />
                         </div>
                         <CiHeart className='text-xl cursor-pointer' />
