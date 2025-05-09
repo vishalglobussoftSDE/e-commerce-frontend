@@ -1,6 +1,5 @@
 import React from "react";
 import AboutServices from "../components/AboutServices.jsx";
-import AboutServices1 from "../components/AboutServices1.jsx";
 import AboutProfile from "../components/AboutProfile.jsx";
 import aboutImg1 from "../assets/about-img/about-img1.png";
 import servicesPng1 from "../assets/about-img/about-png1.png";
@@ -14,7 +13,11 @@ import servicesPng5 from "../assets/about-img/about-png5.png";
 import servicesPng6 from "../assets/about-img/about-png6.png";
 import servicesPng7 from "../assets/about-img/about-png7.png";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 
+=======
+import Achievement from "../components/Achievement.jsx";
+>>>>>>> c206f347fa5ae742e5ad2b7fb073d7a883701b27
 
 const AboutPage = () => {
   return (
@@ -53,23 +56,28 @@ const AboutPage = () => {
           </div>
         </div>
 
+<<<<<<< HEAD
         <div className="flex justify-center gap-40 my-40">
           <AboutServices
+=======
+        <div className="flex justify-center gap-26 my-40">
+          <Achievement
+>>>>>>> c206f347fa5ae742e5ad2b7fb073d7a883701b27
             img={servicesPng1}
             heading="10.5K"
             text="Sellers active on our site"
           />
-          <AboutServices
+          <Achievement
             img={servicesPng2}
             heading="33K"
             text="Monthly product sale"
           />
-          <AboutServices
+          <Achievement
             img={servicesPng3}
             heading="45.5K"
             text="Customer active in our site"
           />
-          <AboutServices
+          <Achievement
             img={servicesPng4}
             heading="25K"
             text="Annual gross sale in our site"
@@ -95,18 +103,18 @@ const AboutPage = () => {
         </div>
 
         <div className="flex justify-center gap-20 my-36">
-          <AboutServices1
+          <AboutServices
             img={servicesPng5}
             heading="FREE AND FAST DELIVERY"
             text="Free delivery for all orders over $140"
           />
 
-          <AboutServices1
+          <AboutServices
             img={servicesPng6}
             heading="24/7 CUSTOMER SERVICE"
             text="Friendly 24/7 customer support"
           />
-          <AboutServices1
+          <AboutServices
             img={servicesPng7}
             heading="MONEY BACK GUARANTEE"
             text="We reurn money within 30 days"

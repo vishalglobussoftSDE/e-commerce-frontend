@@ -1,19 +1,13 @@
 import React from 'react'
 
-const AboutServices = ({img , heading, text}) => {
+const Achievement = ({img, heading ,text, bgColor}) => {
   return (
-<<<<<<< HEAD
     <div style={{ backgroundColor: bgColor }} className='w-[270px] h-[230px] border cursor-pointer rounded-md flex transition gap-3.5 flex-col justify-center shadow-xl hover:bg-[#DB4444] hover:text-white items-center'>
         <img src={img} alt="" />
         <h1 className='text-4xl font-semibold'>{heading}</h1>
-=======
-    <div className='w-[300px] h-[161px] flex flex-col gap-3 justify-center items-center'>
-        <img className='w-[80px] h-[80px]' src={img} alt="" />
-        <h2 className='font-semibold'>{heading}</h2>
->>>>>>> c206f347fa5ae742e5ad2b7fb073d7a883701b27
         <p>{text}</p>
     </div>
   )
 }
 
-export default AboutServices;
+export default Achievement;

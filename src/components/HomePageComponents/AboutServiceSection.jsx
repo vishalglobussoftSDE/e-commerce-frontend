@@ -2,23 +2,23 @@ import React from 'react';
 import servicesPng5 from "../../assets/about-img/about-png5.png";
 import servicesPng6 from "../../assets/about-img/about-png6.png";
 import servicesPng7 from "../../assets/about-img/about-png7.png";
-import AboutServices1 from '../AboutServices1';
+import AboutServices from '../AboutServices';
 
-const AboutService = () => {
+const AboutServiceSection = () => {
   return (
     <div className="flex justify-center gap-20 mt-40">
-          <AboutServices1
+          <AboutServices
             img={servicesPng5}
             heading="FREE AND FAST DELIVERY"
             text="Free delivery for all orders over $140"
           />
 
-          <AboutServices1
+          <AboutServices
             img={servicesPng6}
             heading="24/7 CUSTOMER SERVICE"
             text="Friendly 24/7 customer support"
           />
-          <AboutServices1
+          <AboutServices
             img={servicesPng7}
             heading="MONEY BACK GUARANTEE"
             text="We reurn money within 30 days"
@@ -27,4 +27,4 @@ const AboutService = () => {
   )
 }
 
-export default AboutService
+export default AboutServiceSection;
