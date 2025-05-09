@@ -13,15 +13,11 @@ import servicesPng5 from "../assets/about-img/about-png5.png";
 import servicesPng6 from "../assets/about-img/about-png6.png";
 import servicesPng7 from "../assets/about-img/about-png7.png";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-
-=======
 import Achievement from "../components/Achievement.jsx";
->>>>>>> c206f347fa5ae742e5ad2b7fb073d7a883701b27
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="container">
       
       <div className="my-8 container">
         <p>
@@ -56,13 +52,8 @@ const AboutPage = () => {
           </div>
         </div>
 
-<<<<<<< HEAD
-        <div className="flex justify-center gap-40 my-40">
-          <AboutServices
-=======
         <div className="flex justify-center gap-26 my-40">
           <Achievement
->>>>>>> c206f347fa5ae742e5ad2b7fb073d7a883701b27
             img={servicesPng1}
             heading="10.5K"
             text="Sellers active on our site"
