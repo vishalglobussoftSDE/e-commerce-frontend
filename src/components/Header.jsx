@@ -5,12 +5,9 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Dropdown from './Dropdown';
 
-const Header = ({products = []}) => {
+const Header1 = ({products = []}) => {
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef();
-    const RefreshPageOnClick = () => {
-          window.location.reload(); // Refresh the page
-    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -31,10 +28,9 @@ const Header = ({products = []}) => {
         );
         console.log("Matching products:", matches); 
       };
-      
 
     return (
-        <div className='h-[140px] border-b border-gray-300'>
+        <div className='sticky top-0 z-50 bg-white shadow h-[140px] border-b border-gray-300'>
             <div className='bg-black'>
                 <div className='container grid grid-cols-3 h-[48px] content-center text-white text-[14px]'>
                     <div className='col-span-2 text-right'>
@@ -51,7 +47,7 @@ const Header = ({products = []}) => {
 
             <div className='container'>
                 <div className='h-[38px] mt-[30px] flex items-center justify-between'>
-                    <h1 onClick={RefreshPageOnClick } className='font-bold text-2xl tracking-wide'>Exclusive</h1>
+                    <h1 className='font-bold text-2xl tracking-wide'>Exclusive</h1>
 
                     <ul className='flex gap-6 text-[16px]'>
                         <Link to='/'><li>Home</li></Link>
@@ -83,4 +79,4 @@ const Header = ({products = []}) => {
     );
 };
 
-export default Header;
+export default Header1;

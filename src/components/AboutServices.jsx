@@ -1,10 +1,10 @@
 import React from 'react'
 
-const AboutServices = ({img, heading ,text, bgColor}) => {
+const AboutServices = ({img , heading, text}) => {
   return (
-    <div style={{ backgroundColor: bgColor }} className='w-[270px] h-[230px] border rounded-md flex gap-3.5 flex-col justify-center items-center'>
-        <img src={img} alt="" />
-        <h1 className='text-4xl font-semibold'>{heading}</h1>
+    <div className='w-[300px] h-[161px] flex flex-col gap-3 justify-center items-center'>
+        <img className='w-[80px] h-[80px]' src={img} alt="" />
+        <h2 className='font-semibold'>{heading}</h2>
         <p>{text}</p>
     </div>
   )

@@ -31,9 +31,7 @@ const categoriesList = [
 const ThisMonth = () => {
 
   const navigate = useNavigate();
-
   
- 
   return (
 
     <div className='mt-20'>
