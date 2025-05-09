@@ -10,6 +10,16 @@ import servicesPng7 from "../assets/about-img/about-png7.png";
 
 const HomePage = () => {
 
+
+    const [products, setProducts] = useState([]);
+  
+    useEffect(() => {
+      fetch("http://localhost:3000/api/v1/product/all")
+        .then((res) => res.json())
+        .then((data) => setProducts(data.products))
+        .catch((err) => console.error("Error fetching products:", err));
+    }, []);
+  
   return (
     <div className="min-h-screen flex flex-col">
       

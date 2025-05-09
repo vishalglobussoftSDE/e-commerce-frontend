@@ -1,16 +1,25 @@
 import React from "react";
-import { FaUser, FaBoxOpen, FaTimesCircle, FaStar, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaUser,
+  FaBoxOpen,
+  FaTimesCircle,
+  FaStar,
+  FaSignOutAlt,
+  FaSignInAlt,
+} from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
 const Dropdown = () => {
   const navigate = useNavigate();
+  const isLoggedIn = !!localStorage.getItem("token");
 
   const handleLogout = () => {
-    
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    navigate("/login");
+  };
 
-   
+  const handleLogin = () => {
     navigate("/login");
   };
 
@@ -33,13 +42,25 @@ const Dropdown = () => {
           <FaStar />
           <span>My Reviews</span>
         </li>
-        <li
-          onClick={handleLogout}
-          className="flex items-center px-4 py-2 hover:bg-gray-800 cursor-pointer gap-3"
-        >
-          <FaSignOutAlt />
-          <span>Logout</span>
-        </li>
+
+        {/* Conditional Login/Logout */}
+        {isLoggedIn ? (
+          <li
+            onClick={handleLogout}
+            className="flex items-center px-4 py-2 hover:bg-gray-800 cursor-pointer gap-3"
+          >
+            <FaSignOutAlt />
+            <span>Logout</span>
+          </li>
+        ) : (
+          <li
+            onClick={handleLogin}
+            className="flex items-center px-4 py-2 hover:bg-gray-800 cursor-pointer gap-3"
+          >
+            <FaSignInAlt />
+            <span>Login</span>
+          </li>
+        )}
       </ul>
     </div>
   );
