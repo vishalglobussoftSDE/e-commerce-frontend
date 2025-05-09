@@ -15,7 +15,6 @@ import OrderPlaced from './Pages/OrderPlacedPage'
 import Header1 from './components/Header1';
 import { useEffect, useState } from 'react';
 import AllProducts from './components/AllProducts';
-import MainCarousel from './components/HomePageComponents/MainCarousel';
 
 
 
@@ -46,7 +45,6 @@ const App = () => {
         <Route path="/home" element={<HomepageComp/>} />
         <Route path='placed' element={ <OrderPlaced/>} />
         <Route path='allProducts' element={ <AllProducts/>} />
-        <Route path='test' element={ <MainCarousel/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
