@@ -56,7 +56,7 @@ const SignUpPage = () => {
   return (
     <div>
      
-      <div className="my-16 flex justify-between items-center">
+      <div className="my-16 flex justify-between items-center container">
         <img className="h-[581px] " src={signupImg} alt="" />
         <div className="flex flex-col mr-60 gap-6">
           <h1 className="text-4xl">Create an account</h1>

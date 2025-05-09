@@ -13,21 +13,20 @@ import profileImg3 from "../assets/about-img/about-img4.png";
 import servicesPng5 from "../assets/about-img/about-png5.png";
 import servicesPng6 from "../assets/about-img/about-png6.png";
 import servicesPng7 from "../assets/about-img/about-png7.png";
-import Footer from "../components/Footer.jsx";
 import { Link } from "react-router-dom";
-import Header from "../components/Header.jsx"
+
 
 const AboutPage = () => {
   return (
     <div>
       
-      <div className="m-8 p-8">
+      <div className="my-8 container">
         <p>
           <Link to="/">Home  </Link>/
           <Link>  About</Link>
         </p>
 
-        <div className="flex my-14 justify-between items-center">
+        <div className="flex my-14 justify-between items-center ">
           <div className="flex flex-col gap-14 w-[570px] h-[336px] justify-center">
             <h1 className="text-6xl font-semibold tracking-widest">
               Our Story
@@ -54,7 +53,7 @@ const AboutPage = () => {
           </div>
         </div>
 
-        <div className="flex justify-center gap-26 my-40">
+        <div className="flex justify-center gap-40 my-40">
           <AboutServices
             img={servicesPng1}
             heading="10.5K"
@@ -64,7 +63,6 @@ const AboutPage = () => {
             img={servicesPng2}
             heading="33K"
             text="Monthly product sale"
-            bgColor="#DB4444"
           />
           <AboutServices
             img={servicesPng3}
@@ -78,7 +76,7 @@ const AboutPage = () => {
           />
         </div>
 
-        <div className="flex justify-center gap-36">
+        <div className="flex justify-center gap-56">
           <AboutProfile
             img={profileImg1}
             name="Tom Cruise"
