@@ -1,7 +1,5 @@
 import React from "react";
 import Sidebar from "../components/HomePageComponents/Sidebar";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import OurProduct from "../components/HomePageComponents/OurProduct";
 import Carousel from "../components/Carousel";
 import NewArrivals from "../components/HomePageComponents/NewArrivals";
@@ -9,20 +7,9 @@ import AboutServices1 from "../components/AboutServices1";
 import servicesPng5 from "../assets/about-img/about-png5.png";
 import servicesPng6 from "../assets/about-img/about-png6.png";
 import servicesPng7 from "../assets/about-img/about-png7.png";
-import { useEffect , useState} from 'react'
 
 const HomePage = () => {
 
-
-    const [products, setProducts] = useState([]);
-  
-    useEffect(() => {
-      fetch("http://localhost:3000/api/v1/product/all")
-        .then((res) => res.json())
-        .then((data) => setProducts(data.products))
-        .catch((err) => console.error("Error fetching products:", err));
-    }, []);
-  
   return (
     <div className="min-h-screen flex flex-col">
       

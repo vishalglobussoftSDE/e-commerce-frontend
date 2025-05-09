@@ -5,12 +5,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Timer from './Timer';
+import {useNavigate} from 'react-router-dom';
 
 const OurProduct = () => {
 
   let sliderRef = useRef();
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:3000/api/v1/product/all")
@@ -54,7 +55,7 @@ const OurProduct = () => {
           sliderRef = slider;
         }} {...settings}>
           {products.map((item) => {
-            return <Product product={item} />
+            return <div className='my-5'><Product product={item} /></div>
           })}         
         
         </Slider>
@@ -63,8 +64,8 @@ const OurProduct = () => {
       {/* View All Button */}
       <div className="flex justify-center items-center mt-[60px]">
         <button
-          onClick={() => navigate('/products')}
-          className="bg-[#DB4444] text-white rounded-[5px] py-[16px] px-[48px]"
+          onClick={() => navigate('/allProducts')}
+          className="buttons"
         >
           View All Products
         </button>

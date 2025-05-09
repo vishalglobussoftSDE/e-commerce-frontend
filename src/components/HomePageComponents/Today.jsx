@@ -6,10 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Timer from './Timer';
+import {useNavigate} from 'react-router-dom';
 
 const Today = () => {
 
   let sliderRef = useRef();
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -59,7 +61,7 @@ const Today = () => {
       </div>
 
       <div className='flex w-full justify-center mt-15'>
-        <button className='buttons'>View All products</button>
+        <button onClick={()=>navigate("/allProducts")} className='buttons'>View All products</button>
       </div>
     </div>
   )

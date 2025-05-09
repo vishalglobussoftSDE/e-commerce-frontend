@@ -1,4 +1,5 @@
-import ThisMonthCard from "./ThisMonthCard"
+import ThisMonthCard from "./ThisMonthCard";
+import {useNavigate} from 'react-router-dom';
 
 const categoriesList = [
         {
@@ -28,18 +29,21 @@ const categoriesList = [
     ]
 
 const ThisMonth = () => {
+
+  const navigate = useNavigate();
+
+  
  
   return (
 
     <div className='mt-20'>
       <div className='h-[40px] flex items-center'>
-        <div className='bg-[#DB4444] w-[20px] h-full rounded'></div> <p className='text-red-600 text-[16px] font-[600] ml-4'>Category</p>
+        <div className='bg-[#DB4444] w-[20px] h-full rounded'></div> <p className='text-red-600 text-[16px] font-[600] ml-4'>This Month</p>
       </div>
       <div className='flex items-center mt-2'>
-        <h2 className='text-[36px] font-[600] mt-3 mr-21'>Browse By Category</h2>
-       
+        <h2 className='text-[36px] font-[600] mt-3 mr-21'>Best Selling Products</h2>       
         <div className='ml-auto mr-10'>
-          <button className='buttons'>View All</button>
+          <button onClick={()=>navigate("/allProducts")}  className='buttons'>View All</button>
         </div>
       </div>
 
