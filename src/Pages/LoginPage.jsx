@@ -73,7 +73,7 @@ const LoginPage = () => {
             />
             <input
               className="w-full border-b border-gray-200  py-2 focus:outline-none focus:border-gray-400"
-              type="text"
+              type="password"
               name="password"
               placeholder="Password"
               onChange={handleInput}
