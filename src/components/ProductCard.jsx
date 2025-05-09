@@ -1,41 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import ThreeStar from "/ratingImages/ThreeStar.png";
-import { FaHeart } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
-import { useState } from "react";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import axios from "axios";
-import {  toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(false);
+  const navigate = useNavigate();
 
-  const addtoCart = async () => {
-    try {
-      const token = localStorage.getItem("token"); 
-      const res = await axios.post(
-        "http://localhost:3000/api/v1/user/add-cart",
-        { productId: product._id, quantity: 1 },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, 
-          },
+  const handleCartClick = async () => {
+    if (addedToCart) {
+      navigate("/cart");
+    } else {
+      try {
+        const token = localStorage.getItem("token");
+        const res = await axios.post(
+          "http://localhost:3000/api/v1/user/add-cart",
+          { productId: product._id, quantity: 1 },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        toast.success("Product added to cart successfully!");
+        setAddedToCart(true);
+        console.log("Added to cart:", res.data);
+      } catch (error) {
+        if (error.response) {
+          toast.error(error.response.data.message || "Failed to add to cart.");
+        } else {
+          toast.error("Network or server error: " + error.message);
         }
-      );
-      toast.success("Product added to cart successfully!");
-      console.log("Added to cart:", res.data);
-    } catch (error) {
-      if (error.response) {
-        toast.error(error.response.data.message || "Failed to add to cart.");
-      } else {
-        toast.error("Network or server error: " + error.message);
+        console.error("Add to cart error:", error.response?.data || error.message);
       }
-      console.error("Add to cart error:", error.response?.data || error.message);
     }
   };
-  
-
-  // const { addToCart } = useContext(CartContext);
-  
 
   const imageUrl =
     product.images && product.images.length > 0
@@ -59,10 +61,13 @@ const ProductCard = ({ product }) => {
           className="max-h-[100%] max-w-[100%] object-contain"
           src={imageUrl}
           alt={product.name}
-        /> 
+        />
         <button
-          onClick={addtoCart}
-         className="w-full poi absolute bottom-0 bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900">Add to Cart</button>
+          onClick={handleCartClick}
+          className="w-full absolute bottom-0 bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900"
+        >
+          {addedToCart ? "Go to Cart" : "Add to Cart"}
+        </button>
       </div>
       <div>
         <p className="text-xl py-4 font-semibold">{product.name}</p>
