@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Timer = ({ day, month, year, hours, minutes }) => {
+const Timer = ({setTodayDisplay, day, month, year, hours, minutes }) => {
 
     const givenDate = new Date(`${year}-${month}-${day}T${hours}:${minutes}:00`);
     const currDate = new Date();
@@ -13,6 +13,12 @@ const Timer = ({ day, month, year, hours, minutes }) => {
             setTime(time - 1000);
         }, 1000);
     }, [time])
+
+    useEffect(() => {
+        if (remMiliSeconds <= 0) {
+            setTodayDisplay("hidden");
+        }
+    },[])
 
     const remSeconds = parseInt(Math.floor(time / 1000));
     const remMinutes = parseInt(Math.floor(remSeconds / 60))

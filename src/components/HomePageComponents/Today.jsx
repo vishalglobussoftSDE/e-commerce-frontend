@@ -13,6 +13,7 @@ const Today = () => {
   let sliderRef = useRef();
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
+  const [todayDisplay, setTodayDisplay] = useState("block");
 
   useEffect(() => {
     fetch('http://localhost:3000/api/v1/product/all')
@@ -37,13 +38,13 @@ const Today = () => {
 
   return (
 
-    <div className='mt-20 pb-15 border-b-1 border-gray-300'>
+    <div className={`mt-20 pb-15 border-b-1 border-gray-300 ${todayDisplay}`}>
       <div className='h-[40px] flex items-center'>
         <div className='bg-[#DB4444] w-[20px] h-full rounded'></div> <p className='text-red-600 text-[16px] font-[600] ml-4'>Today's</p>
       </div>
       <div className='flex items-center mt-2'>
         <h2 className='text-[36px] font-[600] mt-3 mr-21'>Flash Sales</h2>
-        <Timer day="10" month="05" year="2025" hours="12" minutes="20" />
+        <Timer setTodayDisplay={setTodayDisplay} day="17" month="05" year="2025" hours="12" minutes="20" />
         <div className='ml-auto mr-10'>
           <button className='p-5 bg-gray-100 rounded-full mr-3 cursor-pointer' onClick={previous}><FaArrowLeftLong /></button>
           <button className='p-5 bg-gray-100 rounded-full cursor-pointer' onClick={next} ><FaArrowRightLong /></button>

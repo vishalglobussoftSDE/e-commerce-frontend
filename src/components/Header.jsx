@@ -5,18 +5,12 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Dropdown from './Dropdown';
 
-<<<<<<< HEAD
 const Header = ({ products = [] }) => {
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef();
     const RefreshPageOnClick = () => {
         window.location.reload(); // Refresh the page
     };
-=======
-const Header1 = ({products = []}) => {
-    const [open, setOpen] = useState(false);
-    const dropdownRef = useRef();
->>>>>>> 6682f14f31e1a0d4e0a197319a3e33cb35f2a6e0
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -35,14 +29,9 @@ const Header1 = ({products = []}) => {
         const matches = products.filter((p) =>
             p.name.toLowerCase().includes(value)
         );
-<<<<<<< HEAD
         console.log("Matching products:", matches);
     };
 
-=======
-        console.log("Matching products:", matches); 
-      };
->>>>>>> 6682f14f31e1a0d4e0a197319a3e33cb35f2a6e0
 
     return (
         <div className='sticky top-0 z-50 bg-white shadow h-[140px] border-b border-gray-300'>
@@ -94,4 +83,4 @@ const Header1 = ({products = []}) => {
     );
 };
 
-export default Header1;
+export default Header;
