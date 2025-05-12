@@ -12,10 +12,10 @@ const NewArrivals = () => {
     <div className="mt-20">
       {/* Heading */}
       <div className='h-[40px] flex items-center'>
-        <div className='bg-[#DB4444] w-[20px] h-full rounded'></div> <p className='text-red-600 text-[16px] font-[600] ml-4'>Our Products</p>
+        <div className='bg-[#DB4444] w-[20px] h-full rounded'></div> <p className='text-red-600 text-[16px] font-[600] ml-4'>Featured</p>
       </div>
       <div className='flex items-center mt-2'>
-        <h2 className='text-[36px] font-[600] mt-3 mr-21'>Explore Our Products</h2>
+        <h2 className='text-[36px] font-[600] mt-3 mr-21'>New Arrival</h2>
       </div>
 
       {/* Grid layout */}

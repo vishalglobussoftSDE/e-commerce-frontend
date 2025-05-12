@@ -15,6 +15,7 @@ import Header from './components/Header';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AllProducts from './components/AllProducts';
+import Test from './components/HomePageComponents/test';
 
 const App = () => {
 
@@ -47,6 +48,7 @@ const App = () => {
         <Route path='/checkOut' element={<CheckOut/>} />
         <Route path='placed' element={ <OrderPlaced/>} />
         <Route path='allProducts' element={ <AllProducts/>} />
+        <Route path='/test' element={<Test/>} />
       </Routes>
       <Footer />
     </BrowserRouter>

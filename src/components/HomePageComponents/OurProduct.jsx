@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import {useNavigate} from 'react-router-dom';
+import ProductCard1 from './ThisMonthCard1';
 
 const OurProduct = () => {
 
@@ -46,8 +47,7 @@ const OurProduct = () => {
         <div className='ml-auto mr-10'>
           <button className='p-5 bg-gray-100 rounded-full mr-3 cursor-pointer' onClick={previous}><FaArrowLeftLong /></button>
           <button className='p-5 bg-gray-100 rounded-full cursor-pointer' onClick={next} ><FaArrowRightLong /></button>
-        </div>
-        
+        </div>        
       </div>
 
       <div className='mt-10' >
@@ -55,7 +55,7 @@ const OurProduct = () => {
           sliderRef = slider;
         }} {...settings}>
           {products.map((item) => {
-            return <div className='my-5'><Product product={item} /></div>
+            return <div className='my-5'><ProductCard1 product={item} /></div>
           })}         
         
         </Slider>
