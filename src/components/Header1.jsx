@@ -5,18 +5,9 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Dropdown from './Dropdown';
 
-<<<<<<< HEAD
-const Header = ({ products = [] }) => {
-    const [open, setOpen] = useState(false);
-    const dropdownRef = useRef();
-    const RefreshPageOnClick = () => {
-        window.location.reload(); // Refresh the page
-    };
-=======
 const Header1 = ({products = []}) => {
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef();
->>>>>>> 6682f14f31e1a0d4e0a197319a3e33cb35f2a6e0
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -33,16 +24,10 @@ const Header1 = ({products = []}) => {
     const handleInput = (e) => {
         const value = e.target.value.toLowerCase();
         const matches = products.filter((p) =>
-            p.name.toLowerCase().includes(value)
+          p.name.toLowerCase().includes(value)
         );
-<<<<<<< HEAD
-        console.log("Matching products:", matches);
-    };
-
-=======
         console.log("Matching products:", matches); 
       };
->>>>>>> 6682f14f31e1a0d4e0a197319a3e33cb35f2a6e0
 
     return (
         <div className='sticky top-0 z-50 bg-white shadow h-[140px] border-b border-gray-300'>
@@ -73,7 +58,7 @@ const Header1 = ({products = []}) => {
 
                     <div className='flex items-center gap-4'>
                         <div className='bg-gray-100 flex items-center h-[38px] px-4'>
-                            <input onChange={handleInput} name='search' type='text' placeholder='What are you looking for?' className='text-[12px] px-2 h-[18px] bg-gray-100 outline-none' />
+                            <input onChange={handleInput} name='search' type='text' placeholder='What are you looking for?' className='text-[12px] px-4 w-3xl rounded-md h-[18px] bg-gray-100 outline-none' />
                             <CiSearch className='text-xl cursor-pointer' />
                         </div>
                         <CiHeart className='text-xl cursor-pointer' />

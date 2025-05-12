@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 import IconsPhone from "../assets/Iconsphone.png";
 import Iconsmail from "../assets/Iconsmail.png";
-import axios from "axios";
-import {  toast } from 'react-toastify';
 
 const ContactPage = () => {
   const [contact, setContact] = useState({
@@ -12,6 +12,7 @@ const ContactPage = () => {
     message: "",
   });
 
+  // Handle form input changes
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -45,16 +46,36 @@ const ContactPage = () => {
     }
   };
 
-  
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user) {
-      setContact((prev) => ({
-        ...prev,
-        name: user.name || "",
-        email: user.email || "",
-      }));
-    }
+    const fetchUser = async () => {
+      try {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        // Check if storedUser exists and has _id
+        if (storedUser && storedUser._id) {
+          const response = await axios.post(
+            "http://localhost:3000/api/v1/user/getuserbyid",
+            {
+              userId: storedUser._id, // send user ID
+            }
+          );
+
+          // Get user data from response
+          const user = response.data.user;
+
+          if (user) {
+            setContact((prev) => ({
+              ...prev,
+              email: user.email || "",
+              name: user.name || user.email?.[0] || "",
+            }));
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      }
+    };
+
+    fetchUser();
   }, []);
 
   return (
@@ -66,14 +87,18 @@ const ContactPage = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-8 ">
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Card */}
-          <div className="bg-white rounded shadow p-6 w-full max-w-sm ">
+          <div className="bg-white rounded shadow p-6 w-full max-w-sm">
             <div className="flex flex-col gap-6">
               {/* Call Section */}
               <div>
                 <div className="flex items-center gap-4 mb-2">
-                  <img src={IconsPhone} alt="Phone Icon" className="w-6 h-6" />
+                  <img
+                    src={IconsPhone}
+                    alt="Phone Icon"
+                    className="w-6 h-6"
+                  />
                   <h3 className="font-semibold text-lg">Call To Us</h3>
                 </div>
                 <p className="text-sm text-gray-600">
@@ -85,7 +110,11 @@ const ContactPage = () => {
               {/* Email Section */}
               <div>
                 <div className="flex items-center gap-4 mb-2">
-                  <img src={Iconsmail} alt="Mail Icon" className="w-6 h-6" />
+                  <img
+                    src={Iconsmail}
+                    alt="Mail Icon"
+                    className="w-6 h-6"
+                  />
                   <h3 className="font-semibold text-lg">Write To US</h3>
                 </div>
                 <p className="text-sm text-gray-600">

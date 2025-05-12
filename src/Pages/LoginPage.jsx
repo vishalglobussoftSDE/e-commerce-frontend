@@ -58,7 +58,7 @@ const LoginPage = () => {
   return (
     <div>
       
-      <div className="my-16 flex justify-between items-center">
+      <div className="my-16 flex justify-between items-center container">
         <img className="h-[581px] "  src={signupImg} alt="" />
         <div className="flex flex-col mr-60 gap-6">
           <h1 className="text-4xl">Log in to Exclusive</h1>
@@ -73,7 +73,7 @@ const LoginPage = () => {
             />
             <input
               className="w-full border-b border-gray-200  py-2 focus:outline-none focus:border-gray-400"
-              type="text"
+              type="password"
               name="password"
               placeholder="Password"
               onChange={handleInput}

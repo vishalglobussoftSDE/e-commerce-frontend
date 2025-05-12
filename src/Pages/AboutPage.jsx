@@ -17,15 +17,15 @@ import Achievement from "../components/Achievement.jsx";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="container">
       
-      <div className="m-8 p-8">
+      <div className="my-8 container">
         <p>
           <Link to="/">Home  </Link>/
           <Link>  About</Link>
         </p>
 
-        <div className="flex my-14 justify-between items-center">
+        <div className="flex my-14 justify-between items-center ">
           <div className="flex flex-col gap-14 w-[570px] h-[336px] justify-center">
             <h1 className="text-6xl font-semibold tracking-widest">
               Our Story
@@ -62,7 +62,6 @@ const AboutPage = () => {
             img={servicesPng2}
             heading="33K"
             text="Monthly product sale"
-            bgColor="#DB4444"
           />
           <Achievement
             img={servicesPng3}
@@ -76,7 +75,7 @@ const AboutPage = () => {
           />
         </div>
 
-        <div className="flex justify-center gap-36">
+        <div className="flex justify-center gap-56">
           <AboutProfile
             img={profileImg1}
             name="Tom Cruise"
